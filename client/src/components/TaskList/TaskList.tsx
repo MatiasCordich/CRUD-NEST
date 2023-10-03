@@ -1,23 +1,9 @@
-import React, { EffectCallback, useEffect, useState } from 'react'
-import { getTaskRequest } from '../../api/tasks'
-import { Task } from '../../api/interfaces/task.interface'
 import TaskItem from './TaskItem'
+import { useTasks } from '../../context/useTasks'
 
 const TaskList = () => {
 
-  const [tasks, setTasks] = useState<Task[]>([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getTaskRequest()
-        setTasks(res)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fetchData()
-  }, [])
+  const {tasks} = useTasks()
 
   return (
     <div>

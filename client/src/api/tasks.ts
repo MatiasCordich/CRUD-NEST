@@ -2,7 +2,8 @@ import { instance } from "./axios/base.api";
 import { CreateTask } from "./interfaces/task.interface";
 
 export const createTaskRequest = async (task : CreateTask) => {
-  await instance.post("/api/v1/task", task)
+  const res = await instance.post("/api/v1/task", task)
+  return res
 }
 
 export const getTaskRequest = async () => {

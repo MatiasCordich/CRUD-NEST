@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { ButtonSave, TaskArea, TaskCheckbox, TaskFormBox, TaskInputs, TaskLabel, TaskLabelChecbox, TaskTitle } from "./TaskElements"
 import { createTaskRequest } from "../../api/tasks"
+import { useTasks } from "../../context/useTasks"
 
 
 const TaskForm = () => {
@@ -11,14 +12,15 @@ const TaskForm = () => {
     done: false
   })
 
+  const {createTask} = useTasks()
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setTask({...task, [e.target.name] : e.target.value})
   }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const res = await createTaskRequest(task)
-    console.log(res)
+    createTask(task)
   }
 
   return (
