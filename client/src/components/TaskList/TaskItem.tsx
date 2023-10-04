@@ -1,11 +1,15 @@
 import React from 'react'
 import { Task } from "../../api/interfaces/task.interface";
+import { useTasks } from '../../context/useTasks';
 
 interface Props {
     task: Task
 }
 
 const TaskItem = ({task}: Props) => {
+
+  const {deleteTask} = useTasks()
+
   return (
     <div key={task._id}>
         <h1>{task.title}</h1>
@@ -13,7 +17,9 @@ const TaskItem = ({task}: Props) => {
         <div>
             <button>Modificar</button>
             <br/>
-            <button>Eliminar</button>
+            <button onClick={async () => {
+              await deleteTask(task._id)
+            }}>Eliminar</button>
         </div>
     </div>
   )

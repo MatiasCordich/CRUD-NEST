@@ -31,13 +31,8 @@ export class TaskService {
   async findAll(): Promise<Task[]> {
     let tasks: Task[];
 
-    // Primero buscamos nuestra lista de pokemones en la DB
+    // Buscamos nuestra lista de pokemones en la DB
     tasks = await this.taskModel.find();
-
-    // Si la lista esta vacia entonces devuelvo un mensaje de error
-    if (tasks.length == 0) {
-      throw new BadRequestException("No hay tareas en la lista");
-    }
 
     // Caso contrario que me de la lista de pokemones
     return tasks;
