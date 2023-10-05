@@ -1,5 +1,5 @@
 import { instance } from "./axios/base.api";
-import { CreateTask } from "./interfaces/task.interface";
+import { CreateTask, UpdateTask } from "./interfaces/task.interface";
 
 export const createTaskRequest = async (task: CreateTask) => {
   const res = await instance.post("/api/v1/task", task);
@@ -13,6 +13,10 @@ export const getTaskRequest = async () => {
 
 export const deleteTaskRequest = async (id: string) => {
   const res = await instance.delete(`/api/v1/task/${id}`);
-  console.log(res)
+  return res;
+};
+
+export const updateTaskRequest = async (id: string, task: UpdateTask) => {
+  const res = await instance.patch(`/api/v1/task/${id}`, task);
   return res;
 };

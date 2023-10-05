@@ -12,3 +12,5 @@ export interface Task {
 // Creo un tipo para mi interfaz Task para que me omita los campos id, createdAt y updatedAt
 
 export type CreateTask = Omit<Task, '_id' | 'createdAt' | 'updatedAt' >
+
+export type UpdateTask = Partial<CreateTask>

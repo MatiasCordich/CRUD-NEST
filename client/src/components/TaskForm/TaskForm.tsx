@@ -31,6 +31,7 @@ const TaskForm = () => {
         <TaskInputs 
           type="text" 
           name="title" 
+          id="title"
           placeholder="Titulo" 
           onChange={handleChange}
         />
@@ -39,6 +40,7 @@ const TaskForm = () => {
         Descripcion
         <TaskArea 
           name="description" 
+          id="description"
           placeholder="Descripcion"
           onChange={handleChange} 
         />
@@ -46,6 +48,7 @@ const TaskForm = () => {
       <TaskLabelChecbox htmlFor="option">
         Finalizada
         <TaskCheckbox
+          id="option"
           name="checkbox"
           onChange={(e) => setTask({...task, done: !task.done})}
         />

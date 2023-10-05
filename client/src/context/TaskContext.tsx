@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { createTaskRequest, getTaskRequest, deleteTaskRequest } from "../api/tasks";
-import { Task, CreateTask } from "../api/interfaces/task.interface";
+import { createTaskRequest, getTaskRequest, deleteTaskRequest, updateTaskRequest } from "../api/tasks";
+import { Task, CreateTask, UpdateTask } from "../api/interfaces/task.interface";
 
 
 interface Props {
@@ -11,12 +11,14 @@ interface TaskContextValue {
     tasks: Task[];
     createTask: (task: CreateTask) => Promise<void>
     deleteTask: (id: string) => Promise<void>
+    updateTask: (id: string, task: UpdateTask) => Promise<void>
 }
 
 export const TaskContext = createContext<TaskContextValue>({
     tasks: [],
     createTask: async () => { },
     deleteTask: async () => { },
+    updateTask: async () => { }
 })
 
 export const TaskProvider: React.FC<Props> = ({ children }) => {
@@ -47,8 +49,17 @@ export const TaskProvider: React.FC<Props> = ({ children }) => {
         if (res.status === 204) setTasks(tasks.filter(task => task._id != id))
 
     }
+
+    const updateTask = async (id: string, task: UpdateTask) => {
+        const res = await updateTaskRequest(id, task)
+        const data = res.data.upatedTask
+        console.log(data)
+        setTasks(tasks.map(task => task._id === id ? {...task, ...data} : task))
+        
+
+    }
     return (
-        <TaskContext.Provider value={{ tasks, createTask, deleteTask }}>
+        <TaskContext.Provider value={{ tasks, createTask, deleteTask, updateTask }}>
             {children}
         </TaskContext.Provider>
     )

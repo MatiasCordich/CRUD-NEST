@@ -1,6 +1,7 @@
 import React from 'react'
 import { Task } from "../../api/interfaces/task.interface";
 import { useTasks } from '../../context/useTasks';
+import { TaskBox } from './TaskItemElements';
 
 interface Props {
     task: Task
@@ -8,20 +9,27 @@ interface Props {
 
 const TaskItem = ({task}: Props) => {
 
-  const {deleteTask} = useTasks()
+  const {deleteTask, updateTask} = useTasks()
 
   return (
-    <div key={task._id}>
+    <TaskBox key={task._id}>
         <h1>{task.title}</h1>
         <p>{task.description}</p>
+        {
+          task.done
+          ? <p>Finalizada</p>
+          : <p>Inconclusa</p>
+        }
         <div>
-            <button>Modificar</button>
+            <button onClick={async () => {
+              await updateTask(task._id, {done: !task.done})
+            }}>Modificar</button>
             <br/>
             <button onClick={async () => {
               await deleteTask(task._id)
             }}>Eliminar</button>
         </div>
-    </div>
+    </TaskBox>
   )
 }
 
