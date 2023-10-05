@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TaskListBox = styled.div`
-    border: 1px solid red;
+    margin-top: 5rem;
     width: 95%;
     display: flex;
     flex-direction: column;

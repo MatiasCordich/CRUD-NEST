@@ -49,10 +49,15 @@ const GlobalStyle = createGlobalStyle`
     text-transform: uppercase;
     letter-spacing: .1rem;
     font-weight: 500;
+    cursor: pointer;
   }
 
   label{
     font-weight: 600;
+  }
+
+  textarea{
+    resize: none;
   }
 
   input, textarea{
@@ -66,6 +71,10 @@ const GlobalStyle = createGlobalStyle`
 
   input[type="checkbox"]{
     width: 3rem;
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
   }
 
 `;

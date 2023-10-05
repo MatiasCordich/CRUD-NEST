@@ -47,6 +47,7 @@ export const TaskArea = styled.textarea`
 `
 export const ButtonSave = styled.button`
     background-color: var(--green);
-    padding: 1rem 9rem;
+    padding: 2rem 9rem;
     border-radius: 0.4rem;
+    font-size: 2rem;
 `
