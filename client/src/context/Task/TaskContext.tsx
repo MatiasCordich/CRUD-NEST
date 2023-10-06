@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { createTaskRequest, getTaskRequest, deleteTaskRequest, updateTaskRequest } from "../api/tasks";
-import { Task, CreateTask, UpdateTask } from "../api/interfaces/task.interface";
+import { createTaskRequest, getTaskRequest, deleteTaskRequest, updateTaskRequest } from "../../api/tasks";
+import { Task, CreateTask, UpdateTask } from "../../api/interfaces/task.interface";
 
 
 interface Props {

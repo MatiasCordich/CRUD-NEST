@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { ButtonSave, TaskArea, TaskCheckbox, TaskFormBox, TaskInputs, TaskLabel, TaskLabelChecbox, TaskTitle } from "./TaskElements"
-import { useTasks } from "../../context/useTasks"
+import { useTasks } from "../../context/Task/useTasks"
 
 
 const TaskForm = () => {

@@ -1,4 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import { ThemeProps } from './themes';
+
+type GlobalThemeProps = {
+  theme: ThemeProps
+}
 
 const GlobalStyle = createGlobalStyle`
     :root{
@@ -29,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-size: 1.8rem;
     font-family: var(--primary);
-    background-color: var(--white-p);
+    background-color: ${({ theme }: GlobalThemeProps) => theme.background};
   }
 
   h1,h2,h3,h4{
@@ -38,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
 
   p{
     font-family: var(--text-font);
+    color: ${({ theme }: GlobalThemeProps) => theme.text};
     font-size: 1.8rem;
     font-weight: 500;
   }
