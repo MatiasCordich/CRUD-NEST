@@ -1,6 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { ButtonSave, TaskArea, TaskCheckbox, TaskFormBox, TaskInputs, TaskLabel, TaskLabelChecbox, TaskTitle } from "./TaskElements"
-import { createTaskRequest } from "../../api/tasks"
 import { useTasks } from "../../context/useTasks"
 
 
@@ -53,7 +52,7 @@ const TaskForm = () => {
           onChange={(e) => setTask({...task, done: !task.done})}
         />
       </TaskLabelChecbox>
-      <ButtonSave>Guardar</ButtonSave>
+      <ButtonSave type="submit">Guardar</ButtonSave>
     </TaskFormBox>
   )
 }

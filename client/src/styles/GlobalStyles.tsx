@@ -9,9 +9,10 @@ const GlobalStyle = createGlobalStyle`
 
         // COLOR
 
+        --white-p: #fff;
         --white: #F1F1F1;
         --green: #59CE8F;
-        --black: #222222
+        --black: #222222;
     }
 
 
@@ -28,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-size: 1.8rem;
     font-family: var(--primary);
-    background-color: #fff;
+    background-color: var(--white-p);
   }
 
   h1,h2,h3,h4{

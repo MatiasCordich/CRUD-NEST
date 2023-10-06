@@ -13,3 +13,7 @@ export const TaskListBox = styled.div`
     }
     
 `;
+
+export const NoTasksMessage = styled.p`
+    font-weight: 700;
+`
