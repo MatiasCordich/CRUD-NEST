@@ -1,14 +1,25 @@
-export interface ThemeProps {
-  background: string;
-  text: string;
+export enum Mode {
+  Light = "light",
+  Dark = "dark"
 }
 
-export const lightTheme: ThemeProps = {
-  background: "var(--white-p)",
-  text: "var(--black)",
-};
+export interface Theme {
+  colors : {
+    background: string;
+    text: string;
+  }
+}
 
-export const darkTheme: ThemeProps = {
-  background: "var(--black)",
-  text: "var(--white-p)",
-};
+export const LightTheme: Theme = {
+  colors: {
+    background: "white",
+    text: "balck"
+  }
+}
+
+export const DarkTheme: Theme = {
+  colors: {
+    background: "black",
+    text: "white"
+  }
+}

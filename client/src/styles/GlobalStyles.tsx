@@ -1,11 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
-import { ThemeProps } from './themes';
+import { createGlobalStyle, withTheme } from 'styled-components';
 
-type GlobalThemeProps = {
-  theme: ThemeProps
-}
+
+
 
 const GlobalStyle = createGlobalStyle`
+
     :root{
         // FONTS
         --primary: 'Inter', sans-serif;
@@ -34,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-size: 1.8rem;
     font-family: var(--primary);
-    background-color: ${({ theme }: GlobalThemeProps) => theme.background};
+    background-color: ${({theme}) => theme.colors?.background}
   }
 
   h1,h2,h3,h4{
@@ -43,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
 
   p{
     font-family: var(--text-font);
-    color: ${({ theme }: GlobalThemeProps) => theme.text};
+    color:  ${({theme}) => theme.colors.text};
     font-size: 1.8rem;
     font-weight: 500;
   }
@@ -86,4 +85,4 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
-export default GlobalStyle;
+export default withTheme(GlobalStyle);
