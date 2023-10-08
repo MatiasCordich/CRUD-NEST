@@ -34,7 +34,7 @@ export const ThemeProviderContext: React.FC<Props> = ({ children }) => {
     localStorage.setItem('theme', JSON.stringify(mode))
     
     const savedTheme = localStorage.getItem('theme')
-  }, [mode])
+  }, [theme])
 
 
   return (

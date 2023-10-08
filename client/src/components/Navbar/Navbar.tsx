@@ -1,4 +1,4 @@
-import { NavbarBox } from "./NavbarElements"
+import { ButtonTheme, NavbarBox } from "./NavbarElements"
 import { HiMoon } from 'react-icons/hi';
 import { FaSun } from 'react-icons/fa';
 
@@ -7,30 +7,21 @@ interface ThemeToggleProps {
   changeTheme: () => void
 }
 
+let savedTheme = localStorage.getItem('theme')
 
-const Navbar = ({ changeTheme } : ThemeToggleProps) => {
+
+const Navbar = ({ changeTheme }: ThemeToggleProps) => {
+
+
+
+
   return (
     <NavbarBox>
-        <label htmlFor="checkbox" className="switch">
-        <input
-          id="checkbox"
-          type="checkbox"
-          onClick={changeTheme}
-          onChange={() => false}
-          checked={window.localStorage.getItem('theme') === 'light'}
-        />
-        <div className="slider round">
-          {window.localStorage.getItem('theme') !== 'light' ? (
-            <>
-              <HiMoon style={{ marginLeft: '6.3px', height: '10px' }} />
-            </>
-          ) : (
-            <>
-              <FaSun size={0} style={{ marginLeft: '41px', height: '10px' }} />
-            </>
-          )}
-        </div>
-      </label>
+      <ButtonTheme onClick={changeTheme}>
+        <p>
+          Modo
+        </p>
+      </ButtonTheme >
     </NavbarBox>
   )
 }
