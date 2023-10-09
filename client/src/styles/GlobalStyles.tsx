@@ -1,8 +1,5 @@
 import { createGlobalStyle, withTheme } from 'styled-components';
 
-
-
-
 const GlobalStyle = createGlobalStyle`
 
     :root{
@@ -33,7 +30,8 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-size: 1.8rem;
     font-family: var(--primary);
-    background-color: ${({theme}) => theme.colors?.background}
+    background-color: ${({theme}) => theme.colors?.backgroundBody};
+    transition: all .6s;
   }
 
   h1,h2,h3,h4{

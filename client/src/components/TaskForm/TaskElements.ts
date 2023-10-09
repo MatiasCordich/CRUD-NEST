@@ -4,7 +4,7 @@ export const TaskFormBox = styled.form`
     min-width: 30rem;
     max-width: 70rem;
     width: 95%;
-    background-color: var(--white);
+    background-color: ${({theme}) => theme.colors?.backgroundBox};
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -6,7 +6,7 @@ export const TaskBox = styled.div`
     gap: 2rem;
     max-width: 50rem;
     width: 95%;
-    background-color: var(--white);
+    background-color: ${({theme}) => theme.colors?.backgroundBox};
     border-radius: 0.4rem;
     padding: 1rem;
 `

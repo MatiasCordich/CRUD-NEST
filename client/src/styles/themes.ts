@@ -5,21 +5,24 @@ export enum Mode {
 
 export interface Theme {
   colors : {
-    background: string;
+    backgroundBody: string;
     text: string;
+    backgroundBox: string
   }
 }
 
 export const LightTheme: Theme = {
   colors: {
-    background: "white",
-    text: "balck"
+    backgroundBody: "var(--white-p)",
+    text: "#040303",
+    backgroundBox: "var(--white)"
   }
 }
 
 export const DarkTheme: Theme = {
   colors: {
-    background: "black",
-    text: "white"
+    backgroundBody: "#191A19",
+    text: "white",
+    backgroundBox: "#222222"
   }
 }
