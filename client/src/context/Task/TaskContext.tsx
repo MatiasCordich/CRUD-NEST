@@ -53,7 +53,6 @@ export const TaskProvider: React.FC<Props> = ({ children }) => {
     const updateTask = async (id: string, task: UpdateTask) => {
         const res = await updateTaskRequest(id, task)
         const data = res.data.upatedTask
-        console.log(data)
         setTasks(tasks.map(task => task._id === id ? {...task, ...data} : task))
         
 
