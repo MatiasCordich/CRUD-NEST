@@ -11,6 +11,7 @@ export const TaskFormBox = styled.form`
     gap: 3rem;
     padding: 2rem;
     border-radius: 0.6rem;
+    border: 1px solid ${({theme}) => theme.colors?.line};
 `
 export const TaskTitle = styled.h2`
     color: var(--green);
@@ -22,12 +23,13 @@ export const TaskLabel = styled.label`
     flex-direction: column;
     gap: 1.5rem;
     width: 90%;
-    color: var(--black);
+    color: ${({ theme }) => theme.colors?.label};
     text-transform: uppercase;
     font-weight: 700;
 `
 export const TaskLabelChecbox = styled.label`
     display: flex;
+    color: ${({ theme }) => theme.colors?.label};
     justify-content: flex-start;
     width: 90%;
     gap: 1rem;
@@ -39,7 +41,6 @@ export const TaskInputs = styled.input`
 `
 
 export const TaskCheckbox = styled.input.attrs({type: 'checkbox'})`
-    background-color:rebeccapurple;
 `
 
 export const TaskArea = styled.textarea`

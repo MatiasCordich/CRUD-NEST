@@ -20,7 +20,7 @@ const App: React.FC = () => {
   return (
 
     <Wrapper>
-      <Navbar changeTheme={toggleMode} />
+      <Navbar changeTheme={toggleMode} mode={mode}/>
       <TaskProvider>
         <TaskForm />
         <TaskList />

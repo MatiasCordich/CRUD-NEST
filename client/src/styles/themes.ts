@@ -7,22 +7,28 @@ export interface Theme {
   colors : {
     backgroundBody: string;
     text: string;
-    backgroundBox: string
+    backgroundBox: string,
+    label: string;
+    line: string;
   }
 }
 
 export const LightTheme: Theme = {
   colors: {
     backgroundBody: "var(--white-p)",
-    text: "#040303",
-    backgroundBox: "var(--white)"
+    text: "var(--black)",
+    backgroundBox: "var(--white)",
+    label: "var(--black)",
+    line: "none"
   }
 }
 
 export const DarkTheme: Theme = {
   colors: {
-    backgroundBody: "#191A19",
-    text: "white",
-    backgroundBox: "#222222"
+    backgroundBody: "var(--black-background)",
+    text: "var(--white-p)",
+    backgroundBox: "var(--black-box)",
+    label: "var(--white-p)",
+    line: "var(--black-line)"
   }
 }

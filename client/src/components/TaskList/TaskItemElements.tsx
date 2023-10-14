@@ -9,6 +9,7 @@ export const TaskBox = styled.div`
     background-color: ${({theme}) => theme.colors?.backgroundBox};
     border-radius: 0.4rem;
     padding: 1rem;
+    border: 1px solid ${({theme}) => theme.colors?.line};
 `
 export const TaskTitle = styled.h1`
     color: var(--green);

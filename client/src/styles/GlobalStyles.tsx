@@ -9,11 +9,15 @@ const GlobalStyle = createGlobalStyle`
         --text-font: 'Raleway', sans-serif;
 
         // COLOR
-
         --white-p: #fff;
         --white: #F1F1F1;
         --green: #59CE8F;
         --black: #222222;
+
+        // DARK THEME
+        --black-box: #222222;
+        --black-background: #191717;
+        --black-line: #454545;
     }
 
 
@@ -30,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-size: 1.8rem;
     font-family: var(--primary);
-    background-color: ${({theme}) => theme.colors?.backgroundBody};
+    background-color: ${({ theme }) => theme.colors?.backgroundBody};
     transition: all .6s;
   }
 
@@ -40,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
 
   p{
     font-family: var(--text-font);
-    color:  ${({theme}) => theme.colors.text};
+    color:  ${({ theme }) => theme.colors.text};
     font-size: 1.8rem;
     font-weight: 500;
   }

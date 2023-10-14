@@ -1,22 +1,25 @@
+import { useEffect, useState } from "react"
 import { ButtonTheme, NavbarBox } from "./NavbarElements"
+import { Mode } from "../../styles/themes"
+import { BsMoonFill, BsFillSunFill } from 'react-icons/bs';
 
 interface ThemeToggleProps {
-  changeTheme: () => void
+  changeTheme: () => void,
+  mode: Mode;
 }
 
-let savedTheme = localStorage.getItem('theme')
-
-const Navbar = ({ changeTheme }: ThemeToggleProps) => {
-
-
+const Navbar = ({ changeTheme, mode }: ThemeToggleProps) => {
 
 
   return (
     <NavbarBox>
       <ButtonTheme onClick={changeTheme}>
-        <p>
-          Modo
+        {mode === Mode.Light 
+        ? <p>
+          <BsMoonFill/>
         </p>
+        : <BsFillSunFill/>
+        }
       </ButtonTheme >
     </NavbarBox>
   )

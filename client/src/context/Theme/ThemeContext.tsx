@@ -24,18 +24,13 @@ export const ThemeProviderContext: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(LightTheme)
   const [mode, setMode] = useState<Mode>(Mode.Light)
 
+  localStorage.setItem('theme', JSON.stringify(mode))
+
   const changeMode = (mode: Mode) => {
     setTheme(mode === Mode.Light ? LightTheme : DarkTheme);
     setMode(mode)
-    
+    localStorage.setItem("theme", mode)
   };
-
-  useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(mode))
-    
-    const savedTheme = localStorage.getItem('theme')
-  }, [theme])
-
 
   return (
     <ThemeContext.Provider value={{ mode, changeMode }}>
