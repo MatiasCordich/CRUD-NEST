@@ -12,7 +12,6 @@ export const TaskBox = styled.div`
     border: 1px solid ${({theme}) => theme.colors?.line};
 `
 export const TaskTitle = styled.h1`
-    color: var(--green);
     font-weight: 800;
 `
 export const TaskDescription = styled.p`

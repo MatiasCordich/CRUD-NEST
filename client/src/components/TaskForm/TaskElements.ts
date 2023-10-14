@@ -14,7 +14,6 @@ export const TaskFormBox = styled.form`
     border: 1px solid ${({theme}) => theme.colors?.line};
 `
 export const TaskTitle = styled.h2`
-    color: var(--green);
     font-size: 4rem;
 `
 
@@ -47,7 +46,8 @@ export const TaskArea = styled.textarea`
     height: 15rem;
 `
 export const ButtonSave = styled.button`
-    background-color: var(--green);
+    background-color:  ${({ theme }) => theme.colors?.buttonBackground};
+    color:  ${({ theme }) => theme.colors?.buttonText};
     padding: 2rem 9rem;
     border-radius: 0.4rem;
     font-size: 2rem;

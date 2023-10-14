@@ -9,4 +9,5 @@ export const Wrapper = styled.div`
     gap: 2.5rem;
     justify-content: center;
     align-items: center;
+    
 `

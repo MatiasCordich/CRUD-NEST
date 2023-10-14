@@ -10,17 +10,20 @@ import { Mode } from './styles/themes'
 
 const App: React.FC = () => {
 
-  const { mode, changeMode } = useTheme()
+  const { mode, changeMode, changeBarbieMode } = useTheme()
 
   const toggleMode = () => {
     changeMode(mode === Mode.Light ? Mode.Dark : Mode.Light)
   }
 
+  const toggleBarbieMode = () => {
+    changeBarbieMode(Mode.Barbie)
+  }
+
 
   return (
-
     <Wrapper>
-      <Navbar changeTheme={toggleMode} mode={mode}/>
+      <Navbar changeTheme={toggleMode} mode={mode} changeBTheme={toggleBarbieMode}/>
       <TaskProvider>
         <TaskForm />
         <TaskList />

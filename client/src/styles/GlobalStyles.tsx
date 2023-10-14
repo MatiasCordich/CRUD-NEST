@@ -1,7 +1,6 @@
 import { createGlobalStyle, withTheme } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-
+const GlobalStyle = createGlobalStyle` 
     :root{
         // FONTS
         --primary: 'Inter', sans-serif;
@@ -18,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
         --black-box: #222222;
         --black-background: #191717;
         --black-line: #454545;
+
+        // BARBIE THEME
+        --pink-b: #FDE5EC;
+        --pink-l: #F78CA2;
+        --pink-xl: #FF4B91;
     }
 
 
@@ -35,11 +39,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.8rem;
     font-family: var(--primary);
     background-color: ${({ theme }) => theme.colors?.backgroundBody};
-    transition: all .6s;
+    transition-duration: .6s;
   }
 
   h1,h2,h3,h4{
     font-family: var(--title-font);
+    color: ${({ theme }) => theme.colors?.title};
   }
 
   p{
