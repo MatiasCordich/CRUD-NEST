@@ -34,12 +34,14 @@ const GlobalStyle = createGlobalStyle`
 
   html{
     font-size: 62.5%;
+    
   }
 
   body{
     font-size: 1.8rem;
     font-family: var(--primary);
     background-color: ${({ theme }) => theme.colors?.backgroundBody};
+    
     
   }
 

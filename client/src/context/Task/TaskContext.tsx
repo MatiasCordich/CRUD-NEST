@@ -1,8 +1,17 @@
 import { createContext, useEffect, useState } from "react";
 import { createTaskRequest, getTaskRequest, deleteTaskRequest, updateTaskRequest } from "../../api/tasks";
 import { Task, CreateTask, UpdateTask } from "../../api/interfaces/task.interface";
+import {toast} from 'sonner'
 
+const styleError = {
+    color: 'red',
+    fontWeight: 600,
+}
 
+const styleSucces = {
+    color: 'green',
+    fontWeight: 600,
+}
 interface Props {
     children: React.ReactNode
 }
@@ -38,15 +47,24 @@ export const TaskProvider: React.FC<Props> = ({ children }) => {
     }, [])
 
     const createTask = async (task: CreateTask) => {
-        const res = await createTaskRequest(task)
-        const data = res.data.newTask
-        setTasks([...tasks, data])
+        try {
+            const res = await createTaskRequest(task)
+            const data = res.data.newTask
+            setTasks([...tasks, data])
+            toast.success(<p style={styleSucces}>Tarea creada con exito!</p>)  
+        } catch (error) {
+           toast.error(<p style={styleError}>Por favor, llena los campos</p>)
+        }
+        
     }
 
     const deleteTask = async (id: string) => {
         const res = await deleteTaskRequest(id)
 
-        if (res.status === 204) setTasks(tasks.filter(task => task._id != id))
+        if (res.status === 204) {
+            setTasks(tasks.filter(task => task._id != id))
+            toast.success(<p style={styleSucces}>Tarea eliminada con exito!</p>)  
+        }
 
     }
 
