@@ -6,11 +6,22 @@ const TaskList = () => {
 
   const { tasks } = useTasks()
 
-  if (!tasks.length)
-    return <NoTasksMessage className="text-center text-xl font-bold my-4">Aun no hay tareas</NoTasksMessage>;
+  if (!tasks.length) return
+  <NoTasksMessage 
+    initial={{ opacity: 0, y: "-2rem" }}
+    animate={{ opacity: 1, y: "0rem" }}
+    transition={{ duration: 1, delay: 1.1, }}
+  >
+    Aun no hay tareas
+  </NoTasksMessage>;
 
   return (
-    <TaskListBox>
+    <TaskListBox
+      initial={{ opacity: 0, y: "-2rem" }}
+      animate={{ opacity: 1, y: "0rem" }}
+      transition={{ duration: 1, delay: 2.5, }}
+    >
+
       {
         tasks.map(task => (
           <TaskItem task={task} key={task._id} />

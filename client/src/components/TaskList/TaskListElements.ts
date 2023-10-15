@@ -1,10 +1,11 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const TaskListBox = styled.div`
+export const TaskListBox = styled(motion.div)`
     margin-top: 5rem;
-    width: 95%;
     display: flex;
     flex-direction: column;
+    margin: 5rem auto;
     gap: 2rem;
     @media (min-width: 900px) {
         display: grid;
@@ -14,6 +15,6 @@ export const TaskListBox = styled.div`
     
 `;
 
-export const NoTasksMessage = styled.p`
+export const NoTasksMessage = styled(motion.p)`
     font-weight: 700;
 `

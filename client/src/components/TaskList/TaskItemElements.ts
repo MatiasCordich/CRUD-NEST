@@ -1,11 +1,12 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const TaskBox = styled.div`
+export const TaskBox = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 2rem;
     max-width: 50rem;
-    width: 95%;
+    width: 100%;
     background-color: ${({theme}) => theme.colors?.backgroundBox};
     border-radius: 0.4rem;
     padding: 1rem;
@@ -15,6 +16,7 @@ export const TaskTitle = styled.h1`
     font-weight: 800;
 `
 export const TaskDescription = styled.p`
+    line-height: 4rem;
     font-weight: 600;
 `
 export const TaskDoneText = styled(TaskDescription)`

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import BarbieTff from '../../public/fonts/Bartex.ttf'
+import BarbieTff from '../fonts/Bartex.ttf'
+
 export const FontStyles = createGlobalStyle`
 
 @font-face {

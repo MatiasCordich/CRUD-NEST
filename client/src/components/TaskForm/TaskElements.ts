@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const TaskFormBox = styled.form`
+export const TaskFormBox = styled(motion.form)`
     min-width: 30rem;
     max-width: 70rem;
     width: 95%;

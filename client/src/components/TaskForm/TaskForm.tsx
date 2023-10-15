@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { ButtonSave, TaskArea, TaskCheckbox, TaskFormBox, TaskInputs, TaskLabel, TaskLabelChecbox, TaskTitle } from "./TaskElements"
 import { useTasks } from "../../context/Task/useTasks"
+import { motion } from "framer-motion"
 
 
 const TaskForm = () => {
@@ -20,10 +21,15 @@ const TaskForm = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     createTask(task)
+    setTask({title : "", description: "", done : false})
   }
 
   return (
-    <TaskFormBox onSubmit={handleSubmit}>
+    <TaskFormBox 
+    initial={{ opacity: 0, y: "2rem"}}
+    animate={{ opacity: 1, y: "0rem" }}
+    transition={{duration: 1,delay: 1.8 }}  
+    onSubmit={handleSubmit}>
       <TaskTitle>Task App</TaskTitle>
       <TaskLabel htmlFor="title">
         Titulo
@@ -31,7 +37,8 @@ const TaskForm = () => {
           type="text" 
           name="title" 
           id="title"
-          placeholder="Titulo" 
+          placeholder="Titulo"
+          value={task.title}
           onChange={handleChange}
         />
       </TaskLabel>
@@ -41,6 +48,7 @@ const TaskForm = () => {
           name="description" 
           id="description"
           placeholder="Descripcion"
+          value={task.description}
           onChange={handleChange} 
         />
       </TaskLabel>
