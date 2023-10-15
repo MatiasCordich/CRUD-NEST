@@ -19,7 +19,7 @@ const TaskList = () => {
     <TaskListBox
       initial={{ opacity: 0, y: "-2rem" }}
       animate={{ opacity: 1, y: "0rem" }}
-      transition={{ duration: 1, delay: 2.5, }}
+      transition={{ duration: 1, delay: 2.5 }}
     >
 
       {
