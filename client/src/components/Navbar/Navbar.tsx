@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { BarbieButton, ButtonText, ButtonTheme, ButtonsBox, NavbarBox, NavbarContent, NavbarImg, NavbarTitle } from "./NavbarElements"
 import { Mode } from "../../styles/themes"
 import { BsMoonFill, BsFillSunFill } from 'react-icons/bs';
@@ -9,7 +8,7 @@ interface ThemeToggleProps {
   mode: Mode;
 }
 
-const Navbar = ({ changeTheme, changeBTheme, mode }: ThemeToggleProps) => {
+const Navbar = ({ changeTheme, changeBTheme, mode }: ThemeToggleProps): JSX.Element => {
 
 
   return (

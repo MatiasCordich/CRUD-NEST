@@ -4,7 +4,7 @@ import { useTasks } from "../../context/Task/useTasks"
 import { motion } from "framer-motion"
 
 
-const TaskForm = () => {
+const TaskForm = (): JSX.Element => {
 
   const [task, setTask] = useState({
     title: "",

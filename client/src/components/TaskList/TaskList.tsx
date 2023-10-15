@@ -2,18 +2,23 @@ import TaskItem from './TaskItem'
 import { useTasks } from '../../context/Task/useTasks'
 import { NoTasksMessage, TaskListBox } from './TaskListElements'
 
-const TaskList = () => {
+const TaskList = (): JSX.Element => {
 
   const { tasks } = useTasks()
 
-  if (!tasks.length) return
-  <NoTasksMessage 
-    initial={{ opacity: 0, y: "-2rem" }}
-    animate={{ opacity: 1, y: "0rem" }}
-    transition={{ duration: 1, delay: 1.1, }}
-  >
-    Aun no hay tareas
-  </NoTasksMessage>;
+  if (!tasks.length) {
+    <>
+      <NoTasksMessage
+        initial={{ opacity: 0, y: "-2rem" }}
+        animate={{ opacity: 1, y: "0rem" }}
+        transition={{ duration: 1, delay: 1.1, }}
+      >
+        Aun no hay tareas
+      </NoTasksMessage>;
+    </>
+  }
+
+
 
   return (
     <TaskListBox
