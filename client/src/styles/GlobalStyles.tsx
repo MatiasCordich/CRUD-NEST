@@ -29,7 +29,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition-duration: .25s;
   }
 
   html{
@@ -41,8 +40,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.8rem;
     font-family: var(--primary);
     background-color: ${({ theme }) => theme.colors?.backgroundBody};
-    
-    
+    transition: all .6s;
   }
 
   h1,h2,h3,h4{
